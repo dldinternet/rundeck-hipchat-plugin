@@ -1,6 +1,6 @@
-<p>Execution of job
-<a href="${executionData.job.href}">
-<#if executionData.job.group?has_content>${executionData.job.group}/</#if>${executionData.job.name}</a>
+Execution of job
+<a href="${execution.job.href}">
+<#if execution.job.group?has_content>${execution.job.group}/</#if>${execution.job.name}</a>
 <#if trigger == "start">
     <b>started</b>
 <#elseif trigger == "failure">
@@ -8,9 +8,8 @@
 <#elseif trigger == "success">
     <b>succeeded</b>
 </#if>
-</p>
 <ul>
-    <li>User: ${executionData.context.job.username}</li>
-    <li>ExecId: ${executionData.context.job.execid}</li>
+    <li>User: ${execution.context.job.username}</li>
+    <li>ExecId: ${execution.context.job.execid}</li>
 </ul>
-<p><a href="${executionData.href}">View Output</a></p>
+<a href="${execution.href}">View Output</a>
